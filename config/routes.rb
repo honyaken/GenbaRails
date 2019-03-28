@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :users
   end
   root to: 'tasks#index'
-  resources :tasks
+
+  #/tasks/new/confirmというURLでconfirm_newアクションに対応づける
+  resources :tasks do
+    post :confirm, action: :confirm_new, on: :new
+  end
 end
