@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   #/tasks/new/confirmというURLでconfirm_newアクションに対応づける
   resources :tasks do
     post :confirm, action: :confirm_new, on: :new
+    post :import, on: :collection
   end
 end
